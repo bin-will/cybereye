@@ -25,14 +25,19 @@ Cybereye --decode_file recorded_file.mp4
 ```
 ## 4.	Evaluation
 
-Environment: 
-Host PC: MacBook Pro (Retina, 15-inch, Mid 2015), 2.2 GHz Intel Core 7, 16GB DDR3, Intel Iris Pro 1536, MacOS 11.6 with internet access, bandwidth 50Mb, locate at city A.
-Recording application in host PC: QuickTime Player 10.5(1086.4.2), preinstalled in MacOS.
+### Environment: 
+- Host PC: MacBook Pro (Retina, 15-inch, Mid 2015), 2.2 GHz Intel Core 7, 16GB DDR3, Intel Iris Pro 1536, MacOS 11.6 with internet access, bandwidth 50Mb, locate at city A.
+- Recording application in host PC: QuickTime Player 10.5(1086.4.2), preinstalled in MacOS.
 VDI Client installed in host PC: Citrix Workspace Version 21.12.0.32(2112), virtual desktop is  Windows Server 2008 R2 Enterprise(version 6.1.7601, sp1), with preinstalled Windows Media Player.
-VDI data center locates at city B, around 2,000 kilometers distance away from city A. 
-CyberEye is developed with Python 3.7.3 with main dependencies on OpenCV 3.4.2 and Numpy 1.21.5, compiled excutable version with Pyinstaller 5.3 supporting Win 2008 and Win 7. The original ZIP files are encoded by 5 FPS, repeat twice, and recorded video are default running on 60 FPS by QuickTime.
-We evaluated different size of target files to verify the efficetiveness and performance, note we only use ZIP type file as target file because all types of files can be archieved to this type. Note QuickTime will interrupt the last frame while writing video file, which cause fail when decoding the file, use FFMPEG application to fix it by the following command, and any other media tools would work also. About FFMPEG, refer: https://github.com/FFmpeg/FFmpeg. The easy fix command is: ffmpeg -i recorded_video.mov -vcodec copy recorded_video_fix.mp4.
+- VDI data center locates at city B, around 2,000 kilometers distance away from city A. 
+- CyberEye is developed with Python 3.7.3 with main dependencies on OpenCV 3.4.2 and Numpy 1.21.5, compiled excutable version with Pyinstaller 5.3 supporting Win 2008 and Win 7. The original ZIP files are encoded by 5 FPS, repeat twice, and recorded video are default running on 60 FPS by QuickTime.
+
+We evaluated different size of target files to verify the efficetiveness and performance, note we only use ZIP type file as target file because all types of files can be archieved to this type. Note QuickTime will interrupt the last frame while writing video file, which cause fail when decoding the file, use FFMPEG application to fix it by the following command, and any other media tools would work also. About FFMPEG, refer: https://github.com/FFmpeg/FFmpeg. The easy fix command is: 
+
+`ffmpeg -i recorded_video.mov -vcodec copy recorded_video_fix.mp4.`
+
 By the practices, we can validate the approximate linear relationship between ZIP file size and video size, also encoding and decoding time. For reliability reason, we suggest to split large ZIP fille to smaller files less than 1MB.
+
 Table: Encoding and Decoding Performance
 ZIP File Size
 (KBytes)	Encoding Time
