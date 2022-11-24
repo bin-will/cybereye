@@ -38,7 +38,7 @@ We evaluated different size of target files to verify the efficetiveness and per
 
 By the practices, we can validate the approximate linear relationship between ZIP file size and video size, also encoding and decoding time. For reliability reason, we suggest to split large ZIP fille to smaller files less than 1MB.
 
-Table: Encoding and Decoding Performance
+### Table: Encoding and Decoding Performance
 
 | ZIP File Size(KBytes)|	Encoding Time(Seconds) |	Encoded Video Size(KBytes) |	Encoded Video Length(Seconds) |	Recorded MOV Video Size(KBytes) |	Decode Time (Seconds) 
 |--------|--------|--------|--------|-------- |--------|
