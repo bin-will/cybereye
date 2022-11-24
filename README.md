@@ -5,7 +5,7 @@
 We present a new data transmission approach named ‘CyberEye’, that can extract data file precisely from VDI(Virtual Desktop Infrastructure) even the data has never left data center. 
 The main idea is encoding data file to video, then playing it at virtual desktop while recording it at host PC, decode the recorded video at last, that can recover the original data file.
 
-## 2.	Requirments
+## 2.	Requirements
 
 - Runtime Environment: Python>=3.0, opencv-python>=3.4, numpy>=1.14, we provide green executable version for Win 7 and Win 2000, packaged by Pyinstaller.
 - Screen Recorder: Any screen recorder supporting drag recording region should be workable, we have test Quicktime on MacOS and Apower(https://www.apowersoft.com/) on Windows.
