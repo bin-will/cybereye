@@ -1,20 +1,30 @@
- CyberEye: Obtain Data from Virtual Desktop by Video
+ # CyberEye: Obtain Data from Virtual Desktop by Video
 
-1.	Introduction
+## 1.	Introduction
+
 We present a new data transmission approach named ‘CyberEye’, that can extract data file precisely from VDI(Virtual Desktop Infrastructure) even the data has never left data center. 
 The main idea is encoding data file to video, then playing it at virtual desktop while recording it at host PC, decode the recorded video at last, that can recover the original data file.
-2.	Requirments
-Runtime Environment: Python>=3.0, opencv-python>=3.4, numpy>=1.14, we provide green executable version for Win 7 and Win 2000, packaged by Pyinstaller.
-Screen Recorder: Any screen recorder supporting drag recording region should be workable, we have test Quicktime on MacOS and Apower(https://www.apowersoft.com/) on Windows.
-3.	Usage
+
+## 2.	Requirments
+
+- Runtime Environment: Python>=3.0, opencv-python>=3.4, numpy>=1.14, we provide green executable version for Win 7 and Win 2000, packaged by Pyinstaller.
+- Screen Recorder: Any screen recorder supporting drag recording region should be workable, we have test Quicktime on MacOS and Apower(https://www.apowersoft.com/) on Windows.
+
+## 3.	Usage
+
 Only four steps to get target file out of virtual desktop, very simply and quietly. 
-1)	Upload CyberEye to virtual desktop.
-2)	Encode target file to video file. Open a CLI terminal and asign the target file, we can get the encoded video file target_file_name.zip.mp4:
+- (1)	Upload CyberEye to virtual desktop.
+- (2)	Encode target file to video file. Open a CLI terminal and asign the target file, we can get the encoded video file `target_file_name.zip.mp4`:
+```
 Cybereye -- input_file target_file_name.zip
-3)	Play target_file_name.zip.mp4 within virtual desktop while recording screen on host PC, remember to drag a record region to mask the video window, this step is important, please refer the demonstration video, then save the recorded video like recorded_file.mp4.
-4)	Decode the recorded video to original target file, open a CLI terminal and asign the video file, we can decode the file and get the original target file decoded_recorded_file.mp4, it is not the original name, just rename it to target_file_name.zip, all done.
+```
+- (3)	Play `target_file_name.zip.mp4` within virtual desktop while recording screen on host PC, remember to drag a record region to mask the video window, this step is important, please refer the demonstration video, then save the recorded video like `recorded_file.mp4`.
+- (4)	Decode the recorded video to original target file, open a CLI terminal and asign the video file, we can decode the file and get the original target file `decoded_recorded_file.mp4`, it is not the original name, just rename it to `target_file_name.zip`, all done.
+```
 Cybereye -- decode_file recorded_file.mp4
-4.	Evaluation
+```
+## 4.	Evaluation
+
 Environment: 
 Host PC: MacBook Pro (Retina, 15-inch, Mid 2015), 2.2 GHz Intel Core 7, 16GB DDR3, Intel Iris Pro 1536, MacOS 11.6 with internet access, bandwidth 50Mb, locate at city A.
 Recording application in host PC: QuickTime Player 10.5(1086.4.2), preinstalled in MacOS.
