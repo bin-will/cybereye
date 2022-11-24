@@ -16,12 +16,12 @@ Only four steps to get target file out of virtual desktop, very simply and quiet
 - (1)	Upload CyberEye to virtual desktop.
 - (2)	Encode target file to video file. Open a CLI terminal and asign the target file, we can get the encoded video file `target_file_name.zip.mp4`:
 ```
-Cybereye -- input_file target_file_name.zip
+Cybereye --input_file target_file_name.zip
 ```
 - (3)	Play `target_file_name.zip.mp4` within virtual desktop while recording screen on host PC, remember to drag a record region to mask the video window, this step is important, please refer the demonstration video, then save the recorded video like `recorded_file.mp4`.
 - (4)	Decode the recorded video to original target file, open a CLI terminal and asign the video file, we can decode the file and get the original target file `decoded_recorded_file.mp4`, it is not the original name, just rename it to `target_file_name.zip`, all done.
 ```
-Cybereye -- decode_file recorded_file.mp4
+Cybereye --decode_file recorded_file.mp4
 ```
 ## 4.	Evaluation
 
