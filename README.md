@@ -34,17 +34,15 @@ VDI Client installed in host PC: Citrix Workspace Version 21.12.0.32(2112), virt
 
 We evaluated different size of target files to verify the efficetiveness and performance, note we only use ZIP type file as target file because all types of files can be archieved to this type. Note QuickTime will interrupt the last frame while writing video file, which cause fail when decoding the file, use FFMPEG application to fix it by the following command, and any other media tools would work also. About FFMPEG, refer: https://github.com/FFmpeg/FFmpeg. The easy fix command is: 
 
-`ffmpeg -i recorded_video.mov -vcodec copy recorded_video_fix.mp4.`
+`ffmpeg -i recorded_video.mov -vcodec copy recorded_video_fix.mp4`
 
 By the practices, we can validate the approximate linear relationship between ZIP file size and video size, also encoding and decoding time. For reliability reason, we suggest to split large ZIP fille to smaller files less than 1MB.
 
 Table: Encoding and Decoding Performance
 
 | ZIP File Size(KBytes)|	Encoding Time(Seconds) |	Encoded Video Size(KBytes) |	Encoded Video Length(Seconds) |	Recorded MOV Video Size(KBytes) |	Decode Time (Seconds) 
-|--------|--------|--------|--------|--------|--------|
-
-
-128	2.231	37,182	67	140,752	76.338
+|--------|--------|--------|--------|-------- |--------|
+| 128    | 2.231  | 37,182 |	67     |	140,752	|76.338  |
 256	3.627	64,389	105	229,110	159.342
 513	6.049	118,789	194	383,230	293.832
 1,025	11.04	227,866	372	829,678	561.398
