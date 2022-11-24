@@ -40,11 +40,9 @@ By the practices, we can validate the approximate linear relationship between ZI
 
 Table: Encoding and Decoding Performance
 
-| ZIP File Size(KBytes)|	Encoding Time(Seconds) |	Encoded Video Size(KBytes) |	Encoded Video Length(Seconds) |	Recorded MOV Video Size(KBytes)	Decode Time (Seconds) 
+| ZIP File Size(KBytes)|	Encoding Time(Seconds) |	Encoded Video Size(KBytes) |	Encoded Video Length(Seconds) |	Recorded MOV Video Size(KBytes) |	Decode Time (Seconds) 
 |--------|--------|--------|--------|--------|--------|
 
-| Model                   | rFID vs val | train steps           |PSNR           | PSIM          | Link                                                                                                                                                  | Comments              
-|-------------------------|------------|----------------|----------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
 
 128	2.231	37,182	67	140,752	76.338
 256	3.627	64,389	105	229,110	159.342
