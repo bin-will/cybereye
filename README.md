@@ -16,12 +16,12 @@ Only four steps to get target file out of virtual desktop, very simply and quiet
 - (1)	Upload CyberEye to virtual desktop.
 - (2)	Encode target file to video file. Open a CLI terminal and asign the target file, we can get the encoded video file `target_file_name.zip.mp4`:
 ```
-Cybereye --input_file target_file_name.zip
+python Cybereye --input_file target_file_name.zip
 ```
 - (3)	Play `target_file_name.zip.mp4` within virtual desktop while recording screen on host PC, remember to drag a record region to mask the video window, this step is important, please refer the demonstration video, then save the recorded video like `recorded_file.mp4`.
 - (4)	Decode the recorded video to original target file, open a CLI terminal and asign the video file, we can decode the file and get the original target file `decoded_recorded_file.mp4`, it is not the original name, just rename it to `target_file_name.zip`, all done.
 ```
-Cybereye --decode_file recorded_file.mp4
+python Cybereye --decode_file recorded_file.mp4
 ```
 ## 4.	Evaluation
 
@@ -39,13 +39,8 @@ We evaluated different size of target files to verify the efficetiveness and per
 By the practices, we can validate the approximate linear relationship between ZIP file size and video size, also encoding and decoding time. For reliability reason, we suggest to split large ZIP fille to smaller files less than 1MB.
 
 Table: Encoding and Decoding Performance
-ZIP File Size
-(KBytes)	Encoding Time
-(Seconds)	Encoded Video Size
-(KBytes)	Encoded Video Length
-(Seconds)	Recorded MOV Video Size
-(KBytes)	Decode Time
-(Seconds)
+
+| ZIP File Size(KBytes)|	Encoding Time(Seconds) |	Encoded Video Size(KBytes) |	Encoded Video Length(Seconds) |	Recorded MOV Video Size(KBytes)	Decode Time (Seconds) |
 128	2.231	37,182	67	140,752	76.338
 256	3.627	64,389	105	229,110	159.342
 513	6.049	118,789	194	383,230	293.832
