@@ -1,9 +1,10 @@
- # CyberEye: Obtain Data from Virtual Desktop by Video
+ # CyberEye: Obtaining Data from Virtual Desktop by Video
 
 ## 1.	Introduction
 
-We present a new data transmission approach named ‘CyberEye’, that can extract data file precisely from VDI(Virtual Desktop Infrastructure) even the data has never left data center. 
-The main idea is encoding data file to video, then playing it at virtual desktop while recording it at host PC, decode the recorded video at last, that can recover the original data file.
+We present a new data transmission approach named ‘CyberEye’, which can extract data file precisely from VDI(Virtual Desktop Infrastructure) even when the data has never left from data center. 
+
+The main idea is to encode data file to video, and then play it at virtual desktop while recording it at host PC, lastly, decode the recorded video, through  which, we could recover the original data file.
 
 ## 2.	Requirements
 
@@ -29,14 +30,14 @@ python cybereye --decode_file recorded_file.mp4
 - Host PC: MacBook Pro, 2.2 GHz Intel Core 7, 16 GB DDR3, Intel Iris Pro 1536, macOS 11.6 with internet access, bandwidth 50Mb, locate at city A.
 - Screen recorder in host PC: QuickTime Player 10.5(1086.4.2), preinstalled in macOS.
 VDI Client installed in host PC: Citrix Workspace Version 21.12.0.32(2112), virtual desktop is  Windows Server 2008 R2 Enterprise(version 6.1.7601, sp1), with preinstalled Windows Media Player.
-- VDI data center locates at city B, far away from city A. 
+- VDI data center is located at city B, far away from city A. 
 - CyberEye is developed with Python 3.7.3 with main dependencies on OpenCV 3.4.2 and Numpy 1.21.5, compiled executable version with Pyinstaller 5.3 supporting Win 2008 and Win 7. The original ZIP files are encoded by 5 FPS, repeat twice, and recorded video are default running on 60 FPS by QuickTime.
 
-We evaluated different size of target files to verify the effectiveness and performance, note we only use ZIP file as target file because any files can be archived to ZIP. Note QuickTime will interrupt the last frame while writing video file, which cause fail when decoding the file, use FFMPEG application to fix it by the following command, and any other media tools would work also. About FFMPEG, refer: https://github.com/FFmpeg/FFmpeg. The easy fix command is: 
+We evaluated different size of target files to verify the effectiveness and performance, note we only use ZIP file as target file because any files can be archived to ZIP. Note QuickTime will interrupt the last frame while writing video file, which cause fail when decoding the file, use FFMPEG application to fix it by the following command, and any other media tools would work too. About FFMPEG, refer: https://github.com/FFmpeg/FFmpeg. The easy fix command is: 
 
 `ffmpeg -i recorded_video.mov -vcodec copy recorded_video_fix.mp4`
 
-By the practices, we can validate the approximate linear relationship between ZIP file size and video size, also encoding and decoding time. For reliability reason, we suggest splitting large ZIP file to smaller files less than 1 MB.
+Through above practice, we can validate the approximate linear relationship between ZIP file size and video size, including encoding and decoding time. For reliability reason, we suggest splitting large ZIP file to smaller files less than 1 MB.
 
 ### Table: Encoding and Decoding Performance
 
